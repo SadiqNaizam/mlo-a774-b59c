@@ -61,13 +61,25 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+        // macOS System Specific Colors
+        systemRed: 'hsl(var(--system-red))',
+        systemYellow: 'hsl(var(--system-yellow))',
+        systemGreen: 'hsl(var(--system-green))',
+        // HSL base for translucent backgrounds (use with opacity utilities)
+        backgroundTranslucentLightHsl: 'hsl(var(--background-translucent-light-hsl))',
+        backgroundTranslucentDarkHsl: 'hsl(var(--background-translucent-dark-hsl))',
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+        sm: '0.25rem', // 4px
+        DEFAULT: 'var(--radius)', // 6px (from CSS variable --radius)
+        md: 'var(--radius)', // 6px, alias for DEFAULT
+        lg: '0.625rem', // 10px
+        xl: '0.875rem', // 14px
 			},
+      fontFamily: {
+        sans: ['var(--font-sans)'],
+      },
 			keyframes: {
 				'accordion-down': {
 					from: {
