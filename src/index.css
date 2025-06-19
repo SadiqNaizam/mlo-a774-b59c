@@ -4,89 +4,118 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Font Variables */
+    --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-body: var(--font-sans);
+    --font-heading: var(--font-sans);
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Light Mode Colors - macOS Inspired */
+    --background: 0 0% 98%; /* Off-white */
+    --foreground: 240 10% 25%; /* Dark Gray text */
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 240 10% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 240 10% 25%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 217 91% 60%; /* macOS Blue */
+    --primary-foreground: 210 40% 98%; /* White */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 240 4% 90%; /* Light Gray UI elements */
+    --secondary-foreground: 240 5% 35%; /* Darker text for secondary */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 4% 96%; /* Very Light Gray */
+    --muted-foreground: 240 4% 55%; /* Softer gray text */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 217 91% 60%; /* Using primary blue */
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 51%; /* Softer Red */
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 240 6% 88%; /* Subtle borders */
+    --input: 240 6% 94%; /* Off-white input backgrounds */
+    --ring: 217 91% 60%; /* Primary blue for focus */
 
-    --radius: 0.5rem;
+    --radius: 0.375rem; /* 6px - Default for buttons, inputs */
 
-    --sidebar-background: 0 0% 98%;
+    /* System Specific Colors (macOS Traffic Lights) */
+    --system-red: 0 79% 63%;
+    --system-yellow: 39 90% 58%;
+    --system-green: 135 60% 55%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Translucent Background HSL Base (apply opacity separately) */
+    --background-translucent-light-hsl: 0 0% 97%;
 
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar - Light Mode */
+    --sidebar-background: 0 0% 95%;
+    --sidebar-foreground: 240 8% 35%;
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: 240 4% 88%;
+    --sidebar-accent-foreground: var(--primary);
+    --sidebar-border: 240 5% 85%;
+    --sidebar-ring: var(--ring);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Mode Colors - macOS Inspired */
+    --background: 240 6% 10%; /* Near Black */
+    --foreground: 210 20% 90%; /* Light Gray/Off-white text */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 5% 14%; /* Slightly lighter dark gray */
+    --card-foreground: 210 20% 90%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 5% 14%;
+    --popover-foreground: 210 20% 90%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 217 91% 65%; /* Brighter macOS Blue */
+    --primary-foreground: 220 50% 15%; /* Very dark blue/black text */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 240 4% 20%; /* Dark Gray UI elements */
+    --secondary-foreground: 210 15% 75%; /* Lighter gray text */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 240 4% 16%; /* Very Dark Gray */
+    --muted-foreground: 210 10% 55%; /* Darker, softer gray text */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 217 91% 65%;
+    --accent-foreground: 220 50% 15%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 65% 55%; /* Brighter Red for dark mode */
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 240 4% 25%; /* Subtle dark borders */
+    --input: 240 4% 18%; /* Dark input backgrounds */
+    --ring: 217 91% 65%; /* Primary blue for focus */
+
+    /* System Specific Colors (macOS Traffic Lights) - same HSL values often work */
+    --system-red: 0 79% 63%;
+    --system-yellow: 39 90% 58%;
+    --system-green: 135 60% 55%;
+
+    /* Translucent Background HSL Base (apply opacity separately) */
+    --background-translucent-dark-hsl: 240 6% 10%;
+
+    /* Sidebar - Dark Mode */
+    --sidebar-background: 240 5% 12%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: 240 4% 22%;
+    --sidebar-accent-foreground: var(--primary);
+    --sidebar-border: 240 3% 20%;
+    --sidebar-ring: var(--ring);
+  }
+}
+
+@layer utilities {
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
   }
 }
 
@@ -96,6 +125,10 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body; /* Apply body font by default */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading; /* Apply heading font to heading elements */
   }
 }
